@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <div class="logo">
+                <span>WeatherApp</span><span style="font-size: 8px;">By Pranav Dessai</span>
+            </div>
+            <!-- <div class="links">
+                <a href="#search">Search</a>
+                <a href="#favorites">Favorites</a>
+            </div> -->
+        </div>
+        <div class="profile">
+            <div class="name">
+                <span>
+                    Pranav Dessai
+                </span>
+            </div>
+            <div class="profile-image">
+                <a href="#">
+                    <img src="60111.jpg" alt="Profile Picture"/>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="input">
+            <div class="form-container">
+                <form action="" method="get">
+                    <input type="text" placeholder="Enter the name of city...." name="" id="inputcity">
+                    <button type="submit" onclick="fetchData(inputcity.value, event)">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="info">
+            <div class="info-heading">
+                <h1 >Weather of <span id="cityname" style="font-weight: 600;"></span></h1>
+            </div>
+            <br>
+            <div class="weather-data-section">
+                <div class="section">
+                    <h3 class="section-heading">
+                        Coordinates
+                    </h3>
+                    <div class="coord">
+                        <div style="text-align: center;" class="north">
+                            <div>
+                                <span id="lat"></span>
+                            </div>
+                            <div>North</div>
+                        </div>
+                        <div style="text-align: center;" class="east">
+                            <div>
+                                <span id="lon"></span>
+                            </div>
+                            <div>East</div>
+                        </div>
+                    </div>
+                    <h3 class="section-heading">
+                        Wind Info
+                    </h3>
+                    <div class="wind-info">
+                        <div style="text-align: center;" class="speed">
+                            <div>
+                                <span id="speed"></span><span>m/s</span>
+                            </div>
+                            <div>Speed</div>
+                        </div>
+                        <div style="text-align: center;" class="direc">
+                            <div>
+                                <span id="wind_deg"></span><span>&deg;</span>
+                            </div>
+                            <div>Direction</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="section">
+                    <h3 class="section-heading">
+                        Temperature
+                    </h3>
+                    <div class="temp">
+                        <span id="temp"></span><span>&deg;C</span>
+                    </div>
+                    <br>
+                    <div class="min-max-temp">
+                        <div class="maxtemp">
+                            <span style="font-weight: 600;">Max Temp</span> <br>
+                            <span id="maxtemp"></span>
+                        </div>
+                        <div class="mintemp">
+                            <span style="font-weight: 600;">Min Temp</span> <br>
+                            <span id="mintemp"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3 class="section-heading" style="margin-bottom: 0;">
+                        In <span id="inCity"></span>...
+                    </h3>
+                    <div class="addi-info" >
+                        <ul>
+                            <li>It feels like: <span id="feels_like"></span><span>&deg;C</span></li>
+                            <li>Humidity is: <span id="humidity"></span><span>%</span></li>
+                            <li>Pressure is: <span id="pressure"></span><span>hPa</span></li>
+                        </ul>
+                    </div>
+                    <h3 class="section-heading" style="margin: 0;">
+                        Description
+                    </h3>       
+                    <div class="desc">
+                        <span id="citynamefordesc"></span> has <span id="desc"></span>
+                    </div>             
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="suninfo">
+            <div class="suninfo-container">
+                <div class="sunrise">
+                    Sunrise: <span id="sunrise"></span><span>am</span>
+                </div>
+                <div class="sunset">
+                    Sunset: <span id="sunset"></span><span>pm</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

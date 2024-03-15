@@ -1,0 +1,222 @@
+*{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+    background-image: url(background.jgp.jpg);
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.562);
+    color: white;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+nav .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+nav .left .logo{
+    font-size: 30px;
+}
+
+nav .left .links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav .left .links a{
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    
+}
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.profile .profile-image a img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    height: 100%;
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 50px;
+}
+
+input#inputcity{
+    width: 30vw;
+    height: 5vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+button{
+    height: 7vh;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+h1{
+    margin: 0;
+    font-size: 90px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.562);
+    color: white;
+    padding: 0 30px;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    backdrop-filter: blur(10px);
+}
+.info-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-data-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.section{
+    width: 300px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.562);
+    color: white;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    backdrop-filter: blur(10px);
+}
+
+.section .section-heading{
+    text-align: center;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.coord{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+.coord .north , .coord .east{
+    padding: 0 20px;
+}
+
+.coord .north{
+    border-right: 1.5px solid black;
+}
+
+
+.temp{
+    text-align: center;
+    font-size: 40px;
+}
+.temp span{
+    font-weight: 700;
+}
+
+.addi-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.min-max-temp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+.maxtemp{
+    border-right: 1.5px solid black;
+}
+.maxtemp,.mintemp{
+    padding: 0 20px;
+}
+
+.addi-info div , .addi-info div span{
+    font-weight: 600;
+}
+
+.desc, .desc span{
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.wind-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 20px;/ */
+}
+
+.wind-info .speed{
+    border-right: 1.5px  solid black;
+}
+
+.wind-info .speed , .wind-info .direc{
+    padding: 0 15px;
+}
+
+.suninfo-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.562);
+    color: white;
+    padding: 15px 0;
+    margin: 0 140px;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    backdrop-filter: blur(10px);
+}
+
+.suninfo-container div{
+    font-weight: 600;
+}
