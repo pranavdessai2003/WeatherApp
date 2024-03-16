@@ -1,9 +1,14 @@
-const apikey = "7b48ca54adb754d5c1ed947d4178c331";
+import config from './config.js';
+const apikey = config.apikey;
 
 function fetchData(city) {
-  event.preventDefault();
-  fetch("https://api.openweathermap.org/data/2.5/weather?q="+ city +"&appid="+apikey)
-    .then((response) => response.json())
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch data.")
+      }
+      return response.json()
+    })
     .then((response) => {
       cityname.innerHTML = response.name;
       citynamefordesc.innerHTML = response.name;
@@ -35,7 +40,7 @@ function fetchData(city) {
     .catch((err) => console.error(err));
 }
 
-truncateDecimals = function (number, digits) {
+function truncateDecimals(number, digits) {
   var multiplier = Math.pow(10, digits),
     adjustedNum = number * multiplier,
     truncatedNum = Math[adjustedNum < 0 ? "ceil" : "floor"](adjustedNum);
@@ -64,3 +69,9 @@ function convertUnixTime(timestamp){
 
   return  formattedTime;
 }
+
+
+document.querySelector('form').addEventListener('submit', (event) => {
+  fetchData(inputcity.value);
+  event.preventDefault(); // Prevent default form submission behavior
+});
