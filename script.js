@@ -5,9 +5,14 @@ function fetchData(city) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Failed to fetch data.")
+        const mainContent = document.querySelector('main')
+        mainContent.style.display = 'none';
+        
+        const notFoundmsg = document.getElementsByClassName('not-found')
+        notFoundmsg.style.display = 'block';
+        throw new Error("City not found.");
       }
-      return response.json()
+      return response.json();
     })
     .then((response) => {
       cityname.innerHTML = response.name;
@@ -37,7 +42,12 @@ function fetchData(city) {
       desc.innerHTML = response.weather[0].description;
       console.log(response);
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      document.querySelector('main').style.display = 'none';
+      document.querySelector('.initial-mssg').style.display = 'none';
+      document.querySelector('.not-found').style.display = 'block';
+      console.error(err)
+    });
 }
 
 function truncateDecimals(number, digits) {
@@ -47,31 +57,35 @@ function truncateDecimals(number, digits) {
 
   return truncatedNum / multiplier;
 };
+
 function kelvinToCelsius(kelvin) {
   return kelvin - 273.15;
 }
 
-
 function convertUnixTime(timestamp){
   var date = new Date(timestamp * 1000);
 
-  // Hours part from the timestamp
   var hours = date.getHours();
-
-  // Minutes part from the timestamp
   var minutes = "0" + date.getMinutes();
-
-  // Seconds part from the timestamp
   var seconds = "0" + date.getSeconds();
 
-  // Will display time in 10:30:23 format
   var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-  return  formattedTime;
+  return formattedTime;
 }
 
-
 document.querySelector('form').addEventListener('submit', (event) => {
+  document.querySelector('main').style.display = 'block';
+  document.querySelector('.initial-mssg').style.display = 'none';
+  document.querySelector('.not-found').style.display = 'none';
   fetchData(inputcity.value);
   event.preventDefault(); // Prevent default form submission behavior
 });
+
+function showInitialMessage() {
+  document.querySelector('main').style.display = 'none';
+  document.querySelector('.initial-mssg').style.display = 'block';
+  document.querySelector('.not-found').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', showInitialMessage);
