@@ -211,7 +211,7 @@ h1{
     background-color: rgba(0, 0, 0, 0.562);
     color: white;
     padding: 15px 0;
-    margin: 0 140px;
+    margin: 0 5rem;
     border-radius: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     backdrop-filter: blur(10px);
@@ -219,4 +219,26 @@ h1{
 
 .suninfo-container div{
     font-weight: 600;
+}
+
+@media (max-width:706px){
+    .weather-data-section{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:425px){
+    .initial-mssg-h1{
+        scale: 2;
+        padding: 1rem 3rem ;
+    }
+    .info-heading h1{
+        font-size: revert;
+    }
+    nav{
+        flex-direction: column;
+    }
+    .suninfo-container{
+        flex-direction: column;
+    }
 }
